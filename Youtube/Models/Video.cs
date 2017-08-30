@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Youtube.Models
+﻿namespace Youtube.Models
 {
     public class Video
     {
@@ -14,6 +9,6 @@ namespace Youtube.Models
         public VideoType Type { get; set; }
 
         public ApplicationUser User { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

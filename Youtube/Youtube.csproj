@@ -167,6 +167,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Configuration\VideoConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -181,6 +182,14 @@
     <Compile Include="Migrations\201708300954285_AddVideoTbl.cs" />
     <Compile Include="Migrations\201708300954285_AddVideoTbl.Designer.cs">
       <DependentUpon>201708300954285_AddVideoTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708301018073_ChangeUserIdTypeInUserTbl.cs" />
+    <Compile Include="Migrations\201708301018073_ChangeUserIdTypeInUserTbl.Designer.cs">
+      <DependentUpon>201708301018073_ChangeUserIdTypeInUserTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708301028280_AddedFluentApiInVideoTbl.cs" />
+    <Compile Include="Migrations\201708301028280_AddedFluentApiInVideoTbl.Designer.cs">
+      <DependentUpon>201708301028280_AddedFluentApiInVideoTbl.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -296,6 +305,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Profile\AddVideo.cshtml" />
     <Content Include="Views\Shared\_LayoutProfile.cshtml" />
+    <Content Include="Views\Profile\VideoGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +324,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708300954285_AddVideoTbl.resx">
       <DependentUpon>201708300954285_AddVideoTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301018073_ChangeUserIdTypeInUserTbl.resx">
+      <DependentUpon>201708301018073_ChangeUserIdTypeInUserTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301028280_AddedFluentApiInVideoTbl.resx">
+      <DependentUpon>201708301028280_AddedFluentApiInVideoTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Youtube.Configuration;
 
 namespace Youtube.Models
 {
@@ -30,6 +31,12 @@ namespace Youtube.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new VideoConfig());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
