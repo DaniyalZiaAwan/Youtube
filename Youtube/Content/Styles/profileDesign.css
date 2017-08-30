@@ -1,0 +1,8 @@
+﻿#profileList li span {
+  position: relative;
+  top: -3px;
+  font-size: 1.2em;
+}
+#profileList li i {
+  margin-right: 10px;
+}
