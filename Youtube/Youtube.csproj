@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201708300859185_InitialModel.Designer.cs">
       <DependentUpon>201708300859185_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708300954285_AddVideoTbl.cs" />
+    <Compile Include="Migrations\201708300954285_AddVideoTbl.Designer.cs">
+      <DependentUpon>201708300954285_AddVideoTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -307,6 +311,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708300859185_InitialModel.resx">
       <DependentUpon>201708300859185_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708300954285_AddVideoTbl.resx">
+      <DependentUpon>201708300954285_AddVideoTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
