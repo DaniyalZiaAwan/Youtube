@@ -2,5 +2,9 @@
   {
     "outputFile": "Content/Styles/profileDesign.css",
     "inputFile": "Content/Styles/profileDesign.less"
+  },
+  {
+    "outputFile": "Content/Site.css",
+    "inputFile": "Content/Site.less"
   }
 ]

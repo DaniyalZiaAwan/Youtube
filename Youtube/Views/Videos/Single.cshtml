@@ -1,0 +1,25 @@
+﻿@model Youtube.ViewModels.VideoSingleVm
+@{
+    ViewBag.Title = "Single";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-sm-9">
+
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <iframe width="100%" height="350" src="@Model.Video.EmbedUrl"
+                    frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="panel-footer">
+            <h3 class="margin0"><a href="@Url.Action("Single", "Videos", new { id = Model.Video.Id })">@Model.Video.Title</a></h3>
+            <p class="badge marginTop10">1345 views</p>
+            <div class="pull-right">
+                <i class="glyphicon glyphicon-thumbs-up"></i>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="col-sm-3"></div>

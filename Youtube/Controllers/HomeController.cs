@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,7 +19,7 @@ namespace Youtube.Controllers
 
         public ActionResult Index()
         {
-            var videos = _context.Videos.ToList();
+            var videos = _context.Videos.Include(v => v.User).ToList();
             foreach (var video in videos)
                 video.CreateEmbedUrl();
 

@@ -43,7 +43,8 @@ namespace Youtube.Controllers
                 Title = viewModel.Title,
                 Type = viewModel.Type,
                 UserId = myId,
-                DateTime = DateTime.Now
+                DateTime = DateTime.Now,
+                Url = viewModel.Url
             };
 
             _context.Videos.Add(video);
