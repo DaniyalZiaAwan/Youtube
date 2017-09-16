@@ -21,6 +21,8 @@ namespace Youtube.Controllers
         public ActionResult Single(int id)
         {
             var video = _context.Videos.Include(v => v.User)
+                                       .Include(v => v.Likes)
+                                       .Include(v => v.Dislikes)
                                        .SingleOrDefault(v => v.Id == id);
             video.CreateEmbedUrl();
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Youtube.Models
@@ -18,6 +19,9 @@ namespace Youtube.Models
 
         public ApplicationUser User { get; set; }
         public string UserId { get; set; }
+
+        public List<Like> Likes { get; set; }
+        public List<Dislike> Dislikes { get; set; }
 
         public void CreateEmbedUrl()
         {

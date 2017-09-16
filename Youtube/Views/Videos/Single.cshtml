@@ -1,7 +1,9 @@
-﻿@model Youtube.ViewModels.VideoSingleVm
+﻿@using Microsoft.AspNet.Identity
+@model Youtube.ViewModels.VideoSingleVm
 @{
     ViewBag.Title = "Single";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var myId = User.Identity.GetUserId();
 }
 
 <div class="col-sm-9">
@@ -13,9 +15,14 @@
         </div>
         <div class="panel-footer">
             <h3 class="margin0"><a href="@Url.Action("Single", "Videos", new { id = Model.Video.Id })">@Model.Video.Title</a></h3>
-            <p class="badge marginTop10">1345 views</p>
+            <p class="badge marginTop10 Pad10">1345 views</p>
             <div class="pull-right">
-                <i class="glyphicon glyphicon-thumbs-up"></i>
+
+                <i data-videoId="@Model.Video.Id" class="glyphicon glyphicon-thumbs-up fontSize20 js-like @((Model.Video.Likes.Any(l => l.UserId == myId && l.VideoId == Model.Video.Id)) ? "likedAndDisliked" : "")"></i>
+                <span class="badge likeCounts">@Model.Video.Likes.Count</span>
+                <i data-videoId="@Model.Video.Id" class="glyphicon glyphicon-thumbs-down fontSize20 js-dislike @((Model.Video.Dislikes.Any(l => l.UserId == myId && l.VideoId == Model.Video.Id)) ? "likedAndDisliked" : "")"></i>
+                <span class="badge dislikeCounts">@Model.Video.Dislikes.Count</span>
+
             </div>
         </div>
     </div>
@@ -23,3 +30,10 @@
 
 </div>
 <div class="col-sm-3"></div>
+
+
+
+
+@section scripts {
+    <script src="~/Scripts/custom/videosScript.js"></script>
+}
