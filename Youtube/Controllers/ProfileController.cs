@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Youtube.Models;
+using Youtube.ViewModels;
 
 namespace Youtube.Controllers
 {
@@ -29,16 +30,24 @@ namespace Youtube.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddVideo(Video video)
+        public ActionResult AddVideo(VideoViewModel viewModel)
         {
             if (!ModelState.IsValid)
-                return View(video);
+                return View(viewModel);
 
             var myId = User.Identity.GetUserId();
-            video.UserId = myId;
+
+            var video = new Video
+            {
+                Description = viewModel.Description,
+                Title = viewModel.Title,
+                Type = viewModel.Type,
+                UserId = myId,
+                DateTime = DateTime.Now
+            };
 
             _context.Videos.Add(video);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
             return RedirectToAction("VideoGallery");
         }

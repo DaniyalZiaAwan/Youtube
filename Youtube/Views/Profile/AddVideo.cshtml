@@ -1,4 +1,4 @@
-﻿@model Youtube.Models.Video
+﻿@model Youtube.ViewModels.VideoViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -51,4 +51,8 @@
             </div>
         </div>
     </div>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201708301028280_AddedFluentApiInVideoTbl.Designer.cs">
       <DependentUpon>201708301028280_AddedFluentApiInVideoTbl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708301052489_AddDateInVideoTbl.cs" />
+    <Compile Include="Migrations\201708301052489_AddDateInVideoTbl.Designer.cs">
+      <DependentUpon>201708301052489_AddDateInVideoTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -199,6 +203,8 @@
     <Compile Include="Models\VideoType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\HomeIndexVm.cs" />
+    <Compile Include="ViewModels\VideoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708301028280_AddedFluentApiInVideoTbl.resx">
       <DependentUpon>201708301028280_AddedFluentApiInVideoTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708301052489_AddDateInVideoTbl.resx">
+      <DependentUpon>201708301052489_AddDateInVideoTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

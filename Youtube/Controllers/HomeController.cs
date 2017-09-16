@@ -3,14 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Youtube.Models;
+using Youtube.ViewModels;
 
 namespace Youtube.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationDbContext _context;
+        public HomeController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var videos = _context.Videos.ToList();
+            foreach (var video in videos)
+                video.CreateEmbedUrl();
+
+            return View(new HomeIndexVm
+            {
+                Videos = videos
+            });
         }
 
         public ActionResult About()
